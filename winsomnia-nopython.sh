@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Define the expected path to powershell.exe and set_awake.ps1
+# Define the expected path to powershell.exe and keep_awake.ps1
 # Using the full path avoids PATH issues in non-interactive SSH sessions.
 POWERSHELL_PATH="/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe"
-KEEP_ALIVE_COMMAND="$POWERSHELL_PATH  -NoProfile -ExecutionPolicy Bypass -File /path/to/keep_awake.ps1"
+KEEP_ALIVE_COMMAND="$POWERSHELL_PATH -NoProfile -ExecutionPolicy Bypass -File /home/paul/winsomnia-nopython/keep_awake.ps1"
 
 cleanup() {
   if [ -n "$KEEP_ALIVE_PID" ]; then
